@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Link from "next/link";
+import { withBase } from "./base-path";
 import { caseStudies, education, experience, otherWork, site, skills } from "./data";
 
 export default function Home() {
@@ -18,22 +19,20 @@ export default function Home() {
             <a className="primary" href="#work">
               View selected work
             </a>
-            <a className="textLink" href="/resume/">
+            <Link className="textLink" href="/resume/">
               Résumé
-            </a>
+            </Link>
             <a className="textLink" href={site.github} target="_blank" rel="noreferrer">
               GitHub
             </a>
           </div>
         </div>
         <figure className="portrait">
-          <Image
-            src="/kimiya.jpg"
+          <img
+            src={withBase("/kimiya.jpg")}
             alt="Portrait of Kimiya Jafarpor"
             width={720}
             height={900}
-            priority
-            sizes="(max-width: 850px) 70vw, 360px"
           />
           <figcaption>
             Based in {site.location}
@@ -230,7 +229,7 @@ export default function Home() {
             </a>
           </div>
           <div className="socials">
-            <a href="/resume/">Résumé</a>
+            <Link href="/resume/">Résumé</Link>
             <a href={site.github} target="_blank" rel="noreferrer">
               GitHub
             </a>
