@@ -1,14 +1,18 @@
 :root {
-  --bg: #0b0b0a;
-  --bg-elevated: #141413;
-  --bg-soft: #1c1c19;
-  --text: #f3f2ec;
-  --text-muted: #9a998f;
-  --text-faint: #6e6d66;
-  --line: #2c2c28;
-  --accent: #f3f2ec;
-  --cream: #eae6d9;
-  --cream-line: #cfc9b6;
+  --bg: #0e1621;
+  --bg-elevated: #162233;
+  --bg-soft: #1c2b40;
+  --text: #f4efe6;
+  --text-muted: #b7c0c9;
+  --text-faint: #7e8b99;
+  --line: #2a3b50;
+  --accent: #d7a36a;
+  --accent-soft: #cbb79a;
+  --on-accent: #0e1621;
+  --paper: #eadfce;
+  --paper-ink: #1b1713;
+  --paper-muted: #6d6358;
+  --paper-line: #d3c6b3;
   --space-1: 8px;
   --space-2: 16px;
   --space-3: clamp(16px, 2vw, 24px);
@@ -32,6 +36,7 @@ body {
   min-width: 320px;
   overflow-x: clip;
   background: var(--bg);
+  background-image: radial-gradient(1000px 520px at 88% -8%, rgba(215, 163, 106, 0.12), transparent 58%);
   color: var(--text);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1rem;
@@ -51,8 +56,8 @@ p, h1, h2, h3, li, dd, dt { overflow-wrap: anywhere; }
 }
 
 ::selection {
-  background: var(--cream);
-  color: var(--bg);
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 .shell {
@@ -66,7 +71,7 @@ p, h1, h2, h3, li, dd, dt { overflow-wrap: anywhere; }
   top: -48px;
   z-index: 80;
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
   padding: 8px 12px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -98,7 +103,7 @@ p, h1, h2, h3, li, dd, dt { overflow-wrap: anywhere; }
   flex: 0 0 auto;
 }
 
-.brand span { color: var(--text-muted); }
+.brand span { color: var(--accent); }
 
 .navLinks {
   display: flex;
@@ -131,25 +136,29 @@ p, h1, h2, h3, li, dd, dt { overflow-wrap: anywhere; }
 }
 
 .navCta:hover,
-.primary:hover,
-.caseActions a:hover,
 .printBtn:hover {
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
   border-color: var(--accent);
 }
 
 .primary,
 .caseActions a:first-child {
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
   border-color: var(--accent);
 }
 
 .primary:hover,
 .caseActions a:first-child:hover {
-  background: transparent;
-  color: var(--text);
+  background: #e3b57e;
+  color: var(--on-accent);
+}
+
+.caseActions a:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
 }
 
 .menuToggle {
@@ -189,7 +198,7 @@ h1, h2 {
 h1 { font-size: clamp(2.1rem, 6.4vw, 4.8rem); margin: 12px 0 10px; }
 h2 { font-size: clamp(1.7rem, 4.2vw, 3.1rem); margin: 10px 0 0; }
 h3 { font-size: clamp(1.15rem, 2vw, 1.5rem); letter-spacing: -0.03em; font-weight: 600; }
-em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-weight: 400; color: var(--text-muted); }
+em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-weight: 400; color: var(--accent-soft); }
 
 .lede {
   font-family: var(--font-serif), Georgia, serif;
@@ -287,7 +296,7 @@ em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-we
   text-transform: uppercase;
 }
 
-.caseTop span { color: var(--text-muted); font-weight: 650; }
+.caseTop span { color: var(--accent); font-weight: 650; }
 .caseTop b {
   margin-left: auto;
   font-size: 0.7rem;
@@ -331,8 +340,8 @@ em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-we
 }
 
 .skills .tags li {
-  border-color: var(--cream-line);
-  color: #3f3d36;
+  border-color: var(--paper-line);
+  color: var(--paper-ink);
 }
 
 .caseActions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-3); }
@@ -407,12 +416,12 @@ em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-we
 .resumeBlock h3 { font-size: 1rem; }
 
 .skills {
-  background: var(--cream);
-  color: #16150f;
+  background: var(--paper);
+  color: var(--paper-ink);
 }
 
 .skills .eyebrow,
-.skills em { color: #6b675c; }
+.skills em { color: var(--paper-muted); }
 .skills h2 { margin-bottom: var(--space-4); }
 .skillRows { display: grid; gap: 0; }
 .skillRows > div {
@@ -421,7 +430,7 @@ em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-we
   gap: var(--space-3);
   align-items: start;
   padding: var(--space-3) 0;
-  border-top: 1px solid var(--cream-line);
+  border-top: 1px solid var(--paper-line);
 }
 
 footer {
@@ -439,7 +448,7 @@ footer {
   display: inline-block;
   margin-top: var(--space-3);
   font-size: clamp(1rem, 2vw, 1.2rem);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--accent);
   padding-bottom: 4px;
 }
 
