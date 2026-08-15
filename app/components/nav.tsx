@@ -26,8 +26,16 @@ export function Nav() {
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
+    const media = window.matchMedia("(min-width: 1101px)");
+    const onResize = () => {
+      if (media.matches) setOpen(false);
+    };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    media.addEventListener("change", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      media.removeEventListener("change", onResize);
+    };
   }, []);
 
   return (
