@@ -12,15 +12,14 @@ Professional portfolio for Kimiya Jafarpor, an AI and Machine Learning Developer
 
 ## Publish with GitHub Pages
 
-1. Create an empty public GitHub repository named `kimiya-portfolio`.
-2. Push this complete folder to the repository's `main` branch.
-3. Open the repository on GitHub and select **Settings > Pages**.
-4. Under **Build and deployment**, choose **GitHub Actions** as the source.
-5. Open the **Actions** tab and wait for the deployment to finish.
+1. Push this complete folder to the `main` branch of `https://github.com/kimiya1991/portfolio`.
+2. Open the repository on GitHub and select **Settings > Pages**.
+3. Under **Build and deployment**, choose **GitHub Actions** as the source.
+4. Open the **Actions** tab and wait for the deployment to finish.
 
 The public website will be available at:
 
-`https://kimiya1991.github.io/kimiya-portfolio/`
+`https://kimiya1991.github.io/portfolio/`
 
 ## Main files
 

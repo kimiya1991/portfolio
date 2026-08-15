@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const repository = "kimiya-portfolio";
+const repository = "portfolio";
 const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
 
 const nextConfig: NextConfig = {
