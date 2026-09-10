@@ -12,7 +12,7 @@ export default function Home() {
           </p>
           <h1>{site.name}</h1>
           <p className="lede">
-            Applied AI across speech, language, vision, and <em>hardware</em>.
+            Applied AI across <em>KM</em>, speech, language, vision, and hardware.
           </p>
           <p className="intro">{site.summary}</p>
           <div className="heroActions">
@@ -50,8 +50,7 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Four pieces of work that show how I move from a real constraint to a working system—software,
-            research, industry, and hardware.
+            Applied work across knowledge management, speech, recommendation, research, scraping, and hardware.
           </p>
         </div>
 
@@ -61,23 +60,27 @@ export default function Home() {
               <header className="caseTop">
                 <span>{project.number}</span>
                 <small>{project.type}</small>
-                {project.featured ? <b>Live product</b> : null}
+                {project.featured ? <b>{project.badge ?? "Live product"}</b> : null}
               </header>
               <h3>{project.title}</h3>
-              <dl className="caseBody">
-                <div>
-                  <dt>Problem</dt>
-                  <dd>{project.problem}</dd>
-                </div>
-                <div>
-                  <dt>Approach</dt>
-                  <dd>{project.approach}</dd>
-                </div>
-                <div>
-                  <dt>Outcome</dt>
-                  <dd>{project.outcome}</dd>
-                </div>
-              </dl>
+              {project.problem && project.approach && project.outcome ? (
+                <dl className="caseBody">
+                  <div>
+                    <dt>Problem</dt>
+                    <dd>{project.problem}</dd>
+                  </div>
+                  <div>
+                    <dt>Approach</dt>
+                    <dd>{project.approach}</dd>
+                  </div>
+                  <div>
+                    <dt>Outcome</dt>
+                    <dd>{project.outcome}</dd>
+                  </div>
+                </dl>
+              ) : (
+                <p className="caseBlurb">{project.blurb}</p>
+              )}
               <ul className="tags">
                 {project.tags.map((tag) => (
                   <li key={tag}>{tag}</li>
@@ -138,9 +141,9 @@ export default function Home() {
               learning, language models, speech, computer vision, and data analysis.
             </p>
             <p>
-              I now work at Daria Hamrah on applied AI while pursuing an M.Sc. in Digital Electronic Systems at
-              Amirkabir University of Technology. I am most interested in work where research has to become
-              something reliable and usable.
+              I now work on applied AI while pursuing an M.Sc. in Digital Electronic Systems at Amirkabir
+              University of Technology. I am most interested in work where research has to become something
+              reliable and usable.
             </p>
             <dl className="facts">
               <div>
@@ -176,7 +179,7 @@ export default function Home() {
               <div>
                 <h3>{item.title}</h3>
                 <p className="company">
-                  {item.company} · {item.location}
+                  {item.company ? `${item.company} · ${item.location}` : item.location}
                 </p>
                 <p>{item.description}</p>
               </div>

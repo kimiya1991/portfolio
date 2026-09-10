@@ -308,6 +308,14 @@ em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-we
 
 .case h3 { margin: 16px 0 20px; font-size: clamp(1.35rem, 2.6vw, 2.1rem); }
 
+.caseBlurb {
+  margin: -8px 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 46em;
+}
+
 .caseBody {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

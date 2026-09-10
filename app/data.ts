@@ -7,20 +7,22 @@ export const site = {
   instagram: "https://instagram.com/mia_electronic",
   url: "https://kimiya1991.github.io/portfolio",
   summary:
-    "I build applied systems across speech, language, vision, and embedded hardware. Currently focused on production text-to-speech at Daria Hamrah, while completing an M.Sc. in Digital Electronic Systems at Amirkabir University of Technology.",
+    "I build applied systems across knowledge management, speech, language, vision, and embedded hardware. Currently focused on KM and production text-to-speech while completing an M.Sc. in Digital Electronic Systems at Amirkabir University of Technology.",
 };
 
 export type CaseStudy = {
   number: string;
   title: string;
   type: string;
-  problem: string;
-  approach: string;
-  outcome: string;
+  problem?: string;
+  approach?: string;
+  outcome?: string;
+  blurb?: string;
   tags: string[];
   liveUrl?: string;
   repoUrl?: string;
   featured?: boolean;
+  badge?: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -41,6 +43,20 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     number: "02",
+    title: "KM",
+    type: "Industry work · Knowledge management",
+    featured: true,
+    badge: "Core product",
+    problem:
+      "Teams sit on PDFs, Word files, and guidelines that are hard to search, summarize, or reuse as structured knowledge.",
+    approach:
+      "A document-to-knowledge pipeline: ingest files, extract usable knowledge, and return summaries, keywords, categories, and FAQs.",
+    outcome:
+      "A knowledge-management product used to turn documents into reviewable, structured knowledge—not just another file dump.",
+    tags: ["Knowledge management", "LLMs", "Document AI", "NLP"],
+  },
+  {
+    number: "03",
     title: "Network Traffic Classification",
     type: "Master's research · Machine learning",
     problem:
@@ -52,7 +68,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Python", "Machine learning", "Network security", "LLMs"],
   },
   {
-    number: "03",
+    number: "04",
     title: "Applied Text-to-Speech",
     type: "Industry work · Speech AI",
     problem:
@@ -60,11 +76,11 @@ export const caseStudies: CaseStudy[] = [
     approach:
       "Work on a production-oriented TTS workflow: preparing data, running experiments, evaluating synthesized speech, and tightening practical Python tooling.",
     outcome:
-      "Ongoing contributions to applied TTS at Daria Hamrah, focused on making the pipeline usable in real mobile experiences.",
+      "Ongoing contributions to applied TTS, focused on making the pipeline usable in real mobile experiences.",
     tags: ["TTS", "Speech processing", "Python", "Evaluation"],
   },
   {
-    number: "04",
+    number: "05",
     title: "Smart Irrigation System",
     type: "Bachelor's project · Embedded systems",
     problem:
@@ -74,6 +90,41 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       "A working end-to-end hardware system—sensors, control logic, electronics, and real-world testing.",
     tags: ["Arduino", "Sensors", "C/C++", "Prototyping"],
+  },
+  {
+    number: "06",
+    title: "Extractor",
+    type: "KM · Ingestion pipelines",
+    blurb: "Ingest PDFs, Word, and spreadsheets into a knowledge pipeline.",
+    tags: ["Document AI", "Python", "Pipelines"],
+  },
+  {
+    number: "07",
+    title: "Topic Organizer",
+    type: "Document AI · Topic grouping",
+    blurb: "Group related passages from mixed files under shared topics.",
+    tags: ["LLMs", "Topic grouping", "NLP"],
+  },
+  {
+    number: "08",
+    title: "Embedder Lab",
+    type: "Embeddings · RAG evaluation",
+    blurb: "Compare embedding models with retrieval metrics for RAG.",
+    tags: ["Embeddings", "RAG", "Evaluation"],
+  },
+  {
+    number: "09",
+    title: "Marketplace Crawler",
+    type: "Web scraping · Price comparison",
+    blurb: "Collect and compare smartphone prices across online marketplaces.",
+    tags: ["Web scraping", "Python", "Data aggregation"],
+  },
+  {
+    number: "10",
+    title: "Black Everyday",
+    type: "Web scraping · Catalog extraction",
+    blurb: "Extract e-commerce categories and product catalogs from the web.",
+    tags: ["Web scraping", "E-commerce", "Python"],
   },
 ];
 
@@ -105,10 +156,9 @@ export const experience = [
   {
     dates: "2025 — Present",
     title: "AI Developer",
-    company: "Daria Hamrah Paytakht",
     location: "Tehran",
     description:
-      "Supporting applied AI initiatives with a focus on text-to-speech: preparing data, running experiments, evaluating synthesized speech, and improving practical Python-based workflows.",
+      "Applied AI across knowledge management and text-to-speech: document-to-knowledge pipelines, data preparation, experiments, and practical Python workflows.",
   },
   {
     dates: "2022 — 2024",
@@ -143,13 +193,17 @@ export const skills = [
       "NLP",
       "Computer vision",
       "Speech & TTS",
+      "Knowledge management",
+      "Embeddings",
+      "RAG",
+      "Knowledge extraction",
       "Data preparation",
       "Model evaluation",
     ],
   },
   {
     title: "Development",
-    items: ["Python", "C", "C++", "REST APIs", "Arduino", "HTML & CSS", "Git"],
+    items: ["Python", "C", "C++", "REST APIs", "Web scraping", "Arduino", "HTML & CSS", "Git"],
   },
   {
     title: "Electronics",
