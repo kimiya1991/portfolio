@@ -248,7 +248,7 @@ em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-we
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center 28%;
+  object-position: center 18%;
   border: 1px solid var(--line);
   filter: saturate(0.82) contrast(1.06);
 }
