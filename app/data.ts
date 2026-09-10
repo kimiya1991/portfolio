@@ -1,13 +1,14 @@
 export const site = {
   name: "Kimiya Jafarpor",
-  role: "AI & Machine Learning Developer",
+  role: "Machine Learning Researcher · M.Sc. Candidate",
   location: "Tehran",
   email: "kimiya.tommy@gmail.com",
   github: "https://github.com/kimiya1991",
   instagram: "https://instagram.com/mia_electronic",
   url: "https://kimiya1991.github.io/portfolio",
+  affiliation: "Amirkabir University of Technology",
   summary:
-    "I build applied systems across knowledge management, speech, language, vision, and embedded hardware. Currently focused on knowledge management and production text-to-speech while completing an M.Sc. in Digital Electronic Systems at Amirkabir University of Technology.",
+    "M.Sc. candidate at Amirkabir University of Technology; the degree has not yet been awarded and is expected in March 2027. The official programme is Digital Electronic Systems. Graduate coursework is in artificial intelligence: big-data processing, data analysis, machine learning, numerical optimization, neural networks, and computer vision. Undergraduate training is in electrical engineering (electronics).",
 };
 
 export type CaseStudy = {
@@ -29,14 +30,15 @@ export const caseStudies: CaseStudy[] = [
   {
     number: "01",
     title: "Cook With What You Have",
-    type: "Live product · Recommendation system",
+    type: "Applied project · Recommendation systems",
     featured: true,
+    badge: "Deployed system",
     problem:
-      "People often cook from a limited pantry and cannot easily match those ingredients to recipes that are actually feasible.",
+      "Recipe retrieval is typically query-led, which is poorly matched to cooking from a constrained set of available ingredients.",
     approach:
-      "An ingredient-first recommender that scores real recipes by coverage, pantry utilization, and rating, then lets users refine results by food group, cuisine, cooking time, and missing items.",
+      "An ingredient-first ranking model that scores recipes by coverage, pantry utilization, and rating, with filters for food group, cuisine, cooking time, and missing items.",
     outcome:
-      "A live dashboard that turns a pantry list into ranked meal ideas, with nutrition, quantities, and step-by-step instructions.",
+      "A deployed system that maps a pantry list to ranked recipes, including nutrition, quantities, and preparation steps.",
     tags: ["Python", "React", "Recommendation systems", "Data engineering"],
     liveUrl: "https://kimiya1991.github.io/food-recom/",
     repoUrl: "https://github.com/kimiya1991/food-recom",
@@ -44,15 +46,15 @@ export const caseStudies: CaseStudy[] = [
   {
     number: "02",
     title: "Document Knowledge Management",
-    type: "Industry work · Knowledge management",
+    type: "Applied research · Knowledge management",
     featured: true,
-    badge: "Core product",
+    badge: "Primary project",
     problem:
-      "Teams sit on PDFs, Word files, and guidelines that are hard to search, summarize, or reuse as structured knowledge.",
+      "Institutional documents—reports, guidelines, and technical files—are difficult to retrieve, summarize, or reuse as structured knowledge.",
     approach:
-      "A document-to-knowledge pipeline: ingest files, extract usable knowledge, and return summaries, keywords, categories, and FAQs.",
+      "A document-to-knowledge pipeline that ingests heterogeneous files and produces summaries, keywords, categories, and question–answer pairs.",
     outcome:
-      "A knowledge-management product used to turn documents into reviewable, structured knowledge—not just another file dump.",
+      "A knowledge-management system for converting unstructured documents into reviewable, structured representations.",
     tags: ["Knowledge management", "LLMs", "Document AI", "NLP"],
   },
   {
@@ -70,60 +72,60 @@ export const caseStudies: CaseStudy[] = [
   {
     number: "04",
     title: "Applied Text-to-Speech",
-    type: "Industry work · Speech AI",
+    type: "Applied research · Speech processing",
     problem:
-      "Mobile products need speech that sounds natural and can be produced through a pipeline that holds up in real use.",
+      "Deployed speech systems require synthesis that is both natural and stable under production constraints.",
     approach:
-      "Work on a production-oriented TTS workflow: preparing data, running experiments, evaluating synthesized speech, and tightening practical Python tooling.",
+      "Data preparation, experimental evaluation of synthesised speech, and refinement of Python tooling for a text-to-speech pipeline.",
     outcome:
-      "Ongoing contributions to applied TTS, focused on making the pipeline usable in real mobile experiences.",
+      "Ongoing applied work on text-to-speech for use in real mobile systems.",
     tags: ["TTS", "Speech processing", "Python", "Evaluation"],
   },
   {
     number: "05",
     title: "Smart Irrigation System",
-    type: "Bachelor's project · Embedded systems",
+    type: "B.Sc. project · Embedded systems",
     problem:
-      "Irrigation that ignores soil conditions wastes water and still fails when moisture is already sufficient.",
+      "Irrigation schedules that ignore soil conditions waste water and still fail when moisture is already sufficient.",
     approach:
-      "Built an Arduino prototype that reads soil moisture and temperature, then drives a pump when thresholds require it.",
+      "An Arduino prototype that samples soil moisture and temperature and actuates a pump when measured values cross defined thresholds.",
     outcome:
-      "A working end-to-end hardware system—sensors, control logic, electronics, and real-world testing.",
+      "An end-to-end hardware system comprising sensors, control logic, electronics, and experimental testing.",
     tags: ["Arduino", "Sensors", "C/C++", "Prototyping"],
   },
   {
     number: "06",
     title: "Multi-format Document Extractor",
     type: "Knowledge management · Ingestion pipelines",
-    blurb: "Ingest PDFs, Word, and spreadsheets into a knowledge pipeline.",
+    blurb: "Ingestion of PDF, Word, and spreadsheet documents into a knowledge-extraction pipeline.",
     tags: ["Document AI", "Python", "Pipelines"],
   },
   {
     number: "07",
     title: "Document Topic Grouping",
     type: "Document AI · Topic grouping",
-    blurb: "Group related passages from mixed files under shared topics.",
+    blurb: "Grouping related passages from heterogeneous documents under shared topic labels.",
     tags: ["LLMs", "Topic grouping", "NLP"],
   },
   {
     number: "08",
     title: "Embedding Model Evaluation",
     type: "Embeddings · RAG evaluation",
-    blurb: "Compare embedding models with retrieval metrics for RAG.",
+    blurb: "Comparative evaluation of embedding models using retrieval metrics for RAG.",
     tags: ["Embeddings", "RAG", "Evaluation"],
   },
   {
     number: "09",
     title: "Smartphone Price Comparison",
     type: "Web scraping · Price comparison",
-    blurb: "Collect and compare smartphone prices across online marketplaces.",
+    blurb: "Collection and comparison of smartphone prices across multiple online marketplaces.",
     tags: ["Web scraping", "Python", "Data aggregation"],
   },
   {
     number: "10",
     title: "E-commerce Catalog Extraction",
     type: "Web scraping · Catalog extraction",
-    blurb: "Extract e-commerce categories and product catalogs from the web.",
+    blurb: "Extraction of product categories and catalogs from e-commerce websites.",
     tags: ["Web scraping", "E-commerce", "Python"],
   },
 ];
@@ -131,23 +133,23 @@ export const caseStudies: CaseStudy[] = [
 export const otherWork = [
   {
     title: "Speech & Sequence Intelligence",
-    type: "University · Deep learning",
+    type: "Coursework · Deep learning",
     summary:
-      "Spoken-digit recognition with attention, sentiment scoring with LSTM/BiLSTM models, and traffic forecasting with GRUs.",
+      "Spoken-digit recognition with attention, sentiment analysis with LSTM/BiLSTM models, and traffic forecasting with GRUs.",
     tags: ["Attention", "LSTM", "GRU"],
   },
   {
     title: "NLP News Classification",
-    type: "University · NLP",
+    type: "Coursework · Natural language processing",
     summary:
-      "Text-classification pipelines on AG News, comparing recurrent models and learned embeddings with pretrained GloVe representations.",
+      "Text classification on AG News, comparing recurrent models and learned embeddings with pretrained GloVe representations.",
     tags: ["NLP", "RNN", "GloVe"],
   },
   {
     title: "Generative Vision Models",
-    type: "University · Computer vision",
+    type: "Coursework · Computer vision",
     summary:
-      "Compared WGAN-style DCGANs, conditional generation, and Pix2Pix-style reconstruction on Fashion-MNIST, with attention to training stability.",
+      "Comparative study of WGAN-style DCGANs, conditional generation, and Pix2Pix-style reconstruction on Fashion-MNIST, with emphasis on training stability.",
     tags: ["GANs", "PyTorch", "Fashion-MNIST"],
   },
 ];
@@ -155,10 +157,10 @@ export const otherWork = [
 export const experience = [
   {
     dates: "2025 — Present",
-    title: "AI Developer",
+    title: "AI Researcher",
     location: "Tehran",
     description:
-      "Applied AI across knowledge management and text-to-speech: document-to-knowledge pipelines, data preparation, experiments, and practical Python workflows.",
+      "Applied research in knowledge management and text-to-speech, including document-to-knowledge pipelines, data preparation, experimental evaluation, and Python-based tooling.",
   },
   {
     dates: "2022 — 2024",
@@ -166,7 +168,7 @@ export const experience = [
     company: "PoyeshGaran Sanat Paya",
     location: "Kermanshah",
     description:
-      "Grew from intern to project responsibility: schematic and PCB design, Arduino programming, prototype soldering, hardware testing, and documentation.",
+      "Progressed from internship to project responsibility, covering schematic and PCB design, Arduino programming, prototype assembly, hardware testing, and technical documentation.",
   },
 ];
 
@@ -174,7 +176,8 @@ export const education = [
   {
     title: "M.Sc. Electrical Engineering — Digital Electronics",
     school: "Amirkabir University of Technology",
-    dates: "2024 — Present",
+    dates: "2024 — March 2027 (expected)",
+    note: "Degree in progress; graduate coursework in artificial intelligence",
   },
   {
     title: "B.Sc. Electrical Engineering — Electronics",
@@ -183,15 +186,27 @@ export const education = [
   },
 ];
 
+export const graduateCourses = [
+  { title: "Big Data Processing", fa: "پردازش داده حجیم" },
+  { title: "Data Analysis", fa: "آنالیز داده" },
+  { title: "Machine Learning", fa: "یادگیری ماشین" },
+  { title: "Numerical Optimization", fa: "بهینه‌سازی عددی" },
+  { title: "Neural Networks", fa: "شبکه عصبی" },
+  { title: "Computer Vision", fa: "بینایی ماشین" },
+];
+
 export const skills = [
   {
-    title: "AI & data",
+    title: "Research areas",
     items: [
       "Machine learning",
       "Neural networks",
+      "Computer vision",
+      "Numerical optimization",
+      "Big data processing",
+      "Data analysis",
       "LLM workflows",
       "NLP",
-      "Computer vision",
       "Speech & TTS",
       "Knowledge management",
       "Embeddings",
@@ -202,7 +217,7 @@ export const skills = [
     ],
   },
   {
-    title: "Development",
+    title: "Programming",
     items: ["Python", "C", "C++", "REST APIs", "Web scraping", "Arduino", "HTML & CSS", "Git"],
   },
   {
