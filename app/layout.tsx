@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import { Nav } from "./components/nav";
 import { site } from "./data";
 import "./globals.css";
@@ -11,9 +11,9 @@ const inter = Inter({
   adjustFontFallback: false,
 });
 
-const serif = Instrument_Serif({
+const serif = Source_Serif_4({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "600"],
   style: ["normal", "italic"],
   variable: "--font-serif",
   display: "swap",
@@ -53,6 +53,10 @@ const jsonLd = {
   "@type": "Person",
   name: site.name,
   jobTitle: site.role,
+  affiliation: {
+    "@type": "CollegeOrUniversity",
+    name: site.affiliation,
+  },
   email: `mailto:${site.email}`,
   url: site.url,
   address: {

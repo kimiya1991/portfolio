@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { PrintButton } from "../components/print-button";
-import { education, experience, otherWork, site, skills } from "../data";
+import { education, experience, graduateCourses, otherWork, site, skills } from "../data";
 
 export const metadata: Metadata = {
-  title: "Résumé",
-  description: `Résumé of ${site.name}, ${site.role} based in ${site.location}.`,
+  title: "Curriculum Vitae",
+  description: `Curriculum vitae of ${site.name}, ${site.role} at ${site.affiliation}.`,
 };
 
 export default function ResumePage() {
@@ -12,10 +12,13 @@ export default function ResumePage() {
     <main id="main" className="resume">
       <div className="shell resumeHead">
         <div>
-          <p className="eyebrow">Résumé</p>
+          <p className="eyebrow">Curriculum vitae</p>
           <h1>{site.name}</h1>
           <p className="lede">
-            {site.role} · {site.location}
+            {site.role}
+          </p>
+          <p className="intro">
+            {site.affiliation} · {site.location}
           </p>
           <p className="intro">{site.summary}</p>
         </div>
@@ -29,7 +32,32 @@ export default function ResumePage() {
       </div>
 
       <section className="shell resumeBlock">
-        <h2>Experience</h2>
+        <h2>Education</h2>
+        {education.map((item) => (
+          <article key={item.title}>
+            <header>
+              <h3>{item.title}</h3>
+              <time>{item.dates}</time>
+            </header>
+            <p>{item.school}</p>
+            {item.note ? <p>{item.note}.</p> : null}
+          </article>
+        ))}
+      </section>
+
+      <section className="shell resumeBlock">
+        <h2>Graduate coursework in artificial intelligence</h2>
+        <ul className="resumeList">
+          {graduateCourses.map((course) => (
+            <li key={course.title}>
+              {course.title} ({course.fa})
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="shell resumeBlock">
+        <h2>Appointments</h2>
         {experience.map((item) => (
           <article key={item.title}>
             <header>
@@ -45,36 +73,23 @@ export default function ResumePage() {
       </section>
 
       <section className="shell resumeBlock">
-        <h2>Education</h2>
-        {education.map((item) => (
-          <article key={item.title}>
-            <header>
-              <h3>{item.title}</h3>
-              <time>{item.dates}</time>
-            </header>
-            <p>{item.school}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="shell resumeBlock">
-        <h2>Selected work</h2>
+        <h2>Selected research and projects</h2>
         <ul className="resumeList">
-          <li>Document knowledge management — documents to structured summaries, keywords, and FAQs.</li>
-          <li>Cook With What You Have — live ingredient-first recipe recommender.</li>
-          <li>Network traffic classification — master&apos;s research comparing ML and LLM methods.</li>
-          <li>Applied text-to-speech — production TTS workflows for mobile experiences.</li>
-          <li>Smart irrigation — Arduino prototype with soil-moisture control.</li>
-          <li>Document extractor, topic grouping, and embedding evaluation for RAG.</li>
+          <li>Document knowledge management — conversion of unstructured documents into structured summaries, keywords, and question–answer pairs.</li>
+          <li>Ingredient-first recipe ranking — a deployed recommendation system based on pantry coverage and utilization.</li>
+          <li>Network traffic classification — M.Sc. research comparing machine-learning and language-model methods.</li>
+          <li>Applied text-to-speech — experimental evaluation and tooling for a production synthesis pipeline.</li>
+          <li>Smart irrigation — B.Sc. embedded prototype with soil-moisture control.</li>
+          <li>Document extraction, topic grouping, and embedding evaluation for retrieval-augmented generation.</li>
           <li>Smartphone price comparison and e-commerce catalog extraction.</li>
         </ul>
         <p className="resumeNote">
-          Additional university work: {otherWork.map((item) => item.title).join("; ")}.
+          Coursework: {otherWork.map((item) => item.title).join("; ")}.
         </p>
       </section>
 
       <section className="shell resumeBlock">
-        <h2>Skills</h2>
+        <h2>Methods and tools</h2>
         {skills.map((group) => (
           <p key={group.title}>
             <strong>{group.title}.</strong> {group.items.join(", ")}.

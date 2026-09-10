@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/#work", label: "Work" },
+  { href: "/#work", label: "Research" },
+  { href: "/#coursework", label: "Coursework" },
   { href: "/#about", label: "About" },
   { href: "/#experience", label: "Experience" },
-  { href: "/resume/", label: "Résumé" },
+  { href: "/resume/", label: "CV" },
 ];
 
 export function Nav() {
@@ -42,7 +43,7 @@ export function Nav() {
     <header className="navWrap">
       <nav className="nav shell" aria-label="Primary">
         <Link className="brand" href="/#top" aria-label="Kimiya Jafarpor, home">
-          KJ<span>.</span>
+          Kimiya Jafarpor
         </Link>
         <div className={`navLinks ${open ? "open" : ""}`} id="site-nav">
           {links.map((link) => (

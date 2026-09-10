@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { withBase } from "./base-path";
-import { caseStudies, education, experience, otherWork, site, skills } from "./data";
+import { caseStudies, education, experience, graduateCourses, otherWork, site, skills } from "./data";
 
 export default function Home() {
   return (
@@ -12,15 +12,15 @@ export default function Home() {
           </p>
           <h1>{site.name}</h1>
           <p className="lede">
-            Applied AI across <em>knowledge management</em>, speech, language, vision, and hardware.
+            Graduate study in <em>artificial intelligence</em> (M.Sc. expected March 2027), with an undergraduate degree in electronics.
           </p>
           <p className="intro">{site.summary}</p>
           <div className="heroActions">
             <a className="primary" href="#work">
-              View selected work
+              Research and projects
             </a>
             <Link className="textLink" href="/resume/">
-              Résumé
+              Curriculum vitae
             </Link>
             <a className="textLink" href={site.github} target="_blank" rel="noreferrer">
               GitHub
@@ -34,23 +34,47 @@ export default function Home() {
             width={720}
             height={900}
           />
-          <figcaption>
-            Based in {site.location}
-            <span>Building applied AI</span>
-          </figcaption>
+          <figcaption>{site.affiliation}</figcaption>
         </figure>
+      </section>
+
+      <section className="coursework section" id="coursework">
+        <div className="shell">
+          <div className="sectionHead">
+            <div>
+              <p className="eyebrow">Graduate coursework</p>
+              <h2>
+                The M.Sc. courses are in <em>artificial intelligence</em>.
+              </h2>
+            </div>
+            <p>
+              The degree title is Digital Electronic Systems. The courses completed in the programme are the
+              following.
+            </p>
+          </div>
+          <ol className="courseGrid">
+            {graduateCourses.map((course, index) => (
+              <li key={course.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{course.title}</strong>
+                <small>{course.fa}</small>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
 
       <section className="section shell" id="work">
         <div className="sectionHead">
           <div>
-            <p className="eyebrow">Selected work</p>
+            <p className="eyebrow">Research &amp; projects</p>
             <h2>
-              Case studies, not a <em>project dump</em>.
+              Selected research and <em>applied work</em>.
             </h2>
           </div>
           <p>
-            Applied work across knowledge management, speech, recommendation, research, scraping, and hardware.
+            Projects in knowledge management, speech processing, recommendation systems, network analysis, and
+            embedded electronics.
           </p>
         </div>
 
@@ -66,15 +90,15 @@ export default function Home() {
               {project.problem && project.approach && project.outcome ? (
                 <dl className="caseBody">
                   <div>
-                    <dt>Problem</dt>
+                    <dt>Context</dt>
                     <dd>{project.problem}</dd>
                   </div>
                   <div>
-                    <dt>Approach</dt>
+                    <dt>Method</dt>
                     <dd>{project.approach}</dd>
                   </div>
                   <div>
-                    <dt>Outcome</dt>
+                    <dt>Result</dt>
                     <dd>{project.outcome}</dd>
                   </div>
                 </dl>
@@ -90,12 +114,12 @@ export default function Home() {
                 <div className="caseActions">
                   {project.liveUrl ? (
                     <a href={project.liveUrl} target="_blank" rel="noreferrer">
-                      Live dashboard
+                      Demonstration
                     </a>
                   ) : null}
                   {project.repoUrl ? (
                     <a href={project.repoUrl} target="_blank" rel="noreferrer">
-                      Source code
+                      Repository
                     </a>
                   ) : null}
                 </div>
@@ -105,7 +129,7 @@ export default function Home() {
         </div>
 
         <div className="otherWork">
-          <h3>Other work</h3>
+          <h3>Related course projects</h3>
           <ul>
             {otherWork.map((item) => (
               <li key={item.title}>
@@ -123,40 +147,40 @@ export default function Home() {
       <section className="about section" id="about">
         <div className="shell aboutGrid">
           <div>
-            <p className="eyebrow">About</p>
+            <p className="eyebrow">Background</p>
             <h2>
-              Engineering roots.
+              Trained in <em>artificial intelligence</em>.
               <br />
-              <em>AI direction.</em>
+              Background in electronics.
             </h2>
           </div>
           <div className="aboutCopy">
             <p className="lead">
-              I like understanding systems end to end—from the circuit board to the model that runs on top of
-              them.
+              My undergraduate degree is in electrical engineering. My graduate coursework is in artificial
+              intelligence.
             </p>
             <p>
-              After a bachelor&apos;s degree in Electrical Engineering, I moved into artificial intelligence
-              through graduate study and industry work. For the past two years I have worked across machine
-              learning, language models, speech, computer vision, and data analysis.
+              I completed a B.Sc. in Electrical Engineering (Electronics) at Razi University. I am an M.Sc.
+              candidate in Digital Electronic Systems at Amirkabir University of Technology; the degree is in
+              progress and expected in March 2027. Courses taken include machine learning, neural networks,
+              computer vision, numerical optimization, data analysis, and big-data processing.
             </p>
             <p>
-              I now work on applied AI while pursuing an M.Sc. in Digital Electronic Systems at Amirkabir
-              University of Technology. I am most interested in work where research has to become something
-              reliable and usable.
+              Applied work includes knowledge management, text-to-speech, recommendation systems, and network
+              traffic classification.
             </p>
             <dl className="facts">
               <div>
-                <dt>2+</dt>
-                <dd>Years in applied AI</dd>
+                <dt>6</dt>
+                <dd>Core graduate AI courses</dd>
               </div>
               <div>
                 <dt>M.Sc.</dt>
-                <dd>Digital electronics, in progress</dd>
+                <dd>Expected March 2027</dd>
               </div>
               <div>
-                <dt>EE</dt>
-                <dd>Hardware and software</dd>
+                <dt>B.Sc.</dt>
+                <dd>Electrical engineering, electronics</dd>
               </div>
             </dl>
           </div>
@@ -166,9 +190,9 @@ export default function Home() {
       <section className="section shell" id="experience">
         <div className="sectionHead compact">
           <div>
-            <p className="eyebrow">Experience</p>
+            <p className="eyebrow">Appointments</p>
             <h2>
-              Where the work got <em>real</em>.
+              Professional and <em>academic</em> experience.
             </h2>
           </div>
         </div>
@@ -193,6 +217,7 @@ export default function Home() {
               <strong>{item.title}</strong>
               <span>
                 {item.school} · {item.dates}
+                {item.note ? ` · ${item.note}` : ""}
               </span>
             </div>
           ))}
@@ -201,9 +226,9 @@ export default function Home() {
 
       <section className="skills section">
         <div className="shell">
-          <p className="eyebrow">Toolkit</p>
+          <p className="eyebrow">Methods &amp; tools</p>
           <h2>
-            What I reach for in <em>practice</em>.
+            Areas of <em>practice</em>.
           </h2>
           <div className="skillRows">
             {skills.map((group) => (
@@ -225,14 +250,14 @@ export default function Home() {
           <div>
             <p className="eyebrow">Contact</p>
             <h2>
-              Working on speech, ML, or embedded intelligence? <em>Let&apos;s talk.</em>
+              Correspondence regarding research or applied machine learning is welcome.
             </h2>
             <a className="email" href={`mailto:${site.email}`}>
               {site.email}
             </a>
           </div>
           <div className="socials">
-            <Link href="/resume/">Résumé</Link>
+            <Link href="/resume/">Curriculum vitae</Link>
             <a href={site.github} target="_blank" rel="noreferrer">
               GitHub
             </a>
