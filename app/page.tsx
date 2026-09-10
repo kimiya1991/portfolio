@@ -12,7 +12,7 @@ export default function Home() {
           </p>
           <h1>{site.name}</h1>
           <p className="lede">
-            Applied AI across <em>KM</em>, speech, language, vision, and hardware.
+            Applied AI across <em>knowledge management</em>, speech, language, vision, and hardware.
           </p>
           <p className="intro">{site.summary}</p>
           <div className="heroActions">

@@ -60,13 +60,13 @@ export default function ResumePage() {
       <section className="shell resumeBlock">
         <h2>Selected work</h2>
         <ul className="resumeList">
-          <li>KM — knowledge management: documents to structured summaries, keywords, and FAQs.</li>
+          <li>Document knowledge management — documents to structured summaries, keywords, and FAQs.</li>
           <li>Cook With What You Have — live ingredient-first recipe recommender.</li>
           <li>Network traffic classification — master&apos;s research comparing ML and LLM methods.</li>
           <li>Applied text-to-speech — production TTS workflows for mobile experiences.</li>
           <li>Smart irrigation — Arduino prototype with soil-moisture control.</li>
-          <li>Extractor, Topic Organizer, Embedder Lab — document AI, topic grouping, and RAG evaluation.</li>
-          <li>Marketplace crawler and Black Everyday — web scraping and catalog extraction.</li>
+          <li>Document extractor, topic grouping, and embedding evaluation for RAG.</li>
+          <li>Smartphone price comparison and e-commerce catalog extraction.</li>
         </ul>
         <p className="resumeNote">
           Additional university work: {otherWork.map((item) => item.title).join("; ")}.

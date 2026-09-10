@@ -7,7 +7,7 @@ export const site = {
   instagram: "https://instagram.com/mia_electronic",
   url: "https://kimiya1991.github.io/portfolio",
   summary:
-    "I build applied systems across knowledge management, speech, language, vision, and embedded hardware. Currently focused on KM and production text-to-speech while completing an M.Sc. in Digital Electronic Systems at Amirkabir University of Technology.",
+    "I build applied systems across knowledge management, speech, language, vision, and embedded hardware. Currently focused on knowledge management and production text-to-speech while completing an M.Sc. in Digital Electronic Systems at Amirkabir University of Technology.",
 };
 
 export type CaseStudy = {
@@ -43,7 +43,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     number: "02",
-    title: "KM",
+    title: "Document Knowledge Management",
     type: "Industry work · Knowledge management",
     featured: true,
     badge: "Core product",
@@ -93,35 +93,35 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     number: "06",
-    title: "Extractor",
-    type: "KM · Ingestion pipelines",
+    title: "Multi-format Document Extractor",
+    type: "Knowledge management · Ingestion pipelines",
     blurb: "Ingest PDFs, Word, and spreadsheets into a knowledge pipeline.",
     tags: ["Document AI", "Python", "Pipelines"],
   },
   {
     number: "07",
-    title: "Topic Organizer",
+    title: "Document Topic Grouping",
     type: "Document AI · Topic grouping",
     blurb: "Group related passages from mixed files under shared topics.",
     tags: ["LLMs", "Topic grouping", "NLP"],
   },
   {
     number: "08",
-    title: "Embedder Lab",
+    title: "Embedding Model Evaluation",
     type: "Embeddings · RAG evaluation",
     blurb: "Compare embedding models with retrieval metrics for RAG.",
     tags: ["Embeddings", "RAG", "Evaluation"],
   },
   {
     number: "09",
-    title: "Marketplace Crawler",
+    title: "Smartphone Price Comparison",
     type: "Web scraping · Price comparison",
     blurb: "Collect and compare smartphone prices across online marketplaces.",
     tags: ["Web scraping", "Python", "Data aggregation"],
   },
   {
     number: "10",
-    title: "Black Everyday",
+    title: "E-commerce Catalog Extraction",
     type: "Web scraping · Catalog extraction",
     blurb: "Extract e-commerce categories and product catalogs from the web.",
     tags: ["Web scraping", "E-commerce", "Python"],
