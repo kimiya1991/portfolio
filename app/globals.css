@@ -246,9 +246,9 @@ em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-we
 .portrait img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 37%;
   border: 1px solid var(--line);
   filter: saturate(0.82) contrast(1.06);
 }
