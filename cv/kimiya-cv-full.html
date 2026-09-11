@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kimiya Jafarpor — CV</title>
+  <style>
+    @page { size: A4; margin: 12mm 14mm 12mm; }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0; background: #fff; color: #1a1a1a;
+      font-family: Calibri, "Segoe UI", Arial, sans-serif;
+      font-size: 10.3pt; line-height: 1.34;
+    }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p, ul { margin: 0; }
+    ul { padding: 0; list-style: none; }
+    .header { display: grid; grid-template-columns: 86px 1fr; gap: 16px; align-items: center; margin-bottom: 10px; }
+    .photo { width: 86px; height: 86px; border-radius: 50%; object-fit: cover; object-position: center 30%; }
+    h1 { font-size: 22pt; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+    .role { margin-top: 2px; font-size: 11.4pt; color: #444; }
+    .contacts { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 9.5pt; color: #333; }
+    .bar {
+      font-size: 9.8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      border-bottom: 1.5px solid #222; padding: 0 0 3px; margin: 10px 0 6px;
+    }
+    .entry { display: grid; grid-template-columns: 8.5rem 1fr; gap: 8px; margin: 0 0 7px; }
+    .when { font-size: 9.1pt; color: #333; line-height: 1.35; }
+    .entry h3 { font-size: 10.4pt; }
+    .org { color: #444; }
+    .just, .entry p { text-align: justify; }
+    .bullets { margin-top: 2px; }
+    .bullets li { position: relative; padding-left: 11px; margin: 1px 0; }
+    .bullets li::before { content: "–"; position: absolute; left: 0; }
+    .page { page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .page-num { text-align: center; color: #888; font-size: 9pt; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <header class="header">
+      <img class="photo" src="kimiya.jpg" alt="Portrait of Kimiya Jafarpor" />
+      <div>
+        <h1>Kimiya Jafarpor</h1>
+        <p class="role">Machine Learning Researcher · M.Sc. Candidate</p>
+        <div class="contacts">
+          <span>kimiya.tommy@gmail.com</span>
+          <span>+98 921 977 5012</span>
+          <span>Tehran, Iran</span>
+          <a href="https://github.com/kimiya1991">github.com/kimiya1991</a>
+          <a href="https://kimiya1991.github.io/portfolio/">kimiya1991.github.io/portfolio</a>
+          <a href="https://linkedin.com/in/kimia-jafarpor">linkedin.com/in/kimia-jafarpor</a>
+        </div>
+      </div>
+    </header>
+
+    <h2 class="bar">Profile</h2>
+    <p class="just">
+      M.Sc. candidate in Digital Electronic Systems, Amirkabir University of Technology (degree in progress; expected March 2027).
+      Graduate coursework is in artificial intelligence: big-data processing, data analysis, machine learning, numerical optimization, neural networks, and computer vision.
+      Master’s thesis research is hierarchical classification of encrypted and malicious network traffic on MERLOT packet text, using a DistilGPT-2 router–expert architecture with LoRA specialists.
+      Additional applied work covers document knowledge management and text-to-speech. Undergraduate training is a B.Sc. in Electrical Engineering (Electronics).
+    </p>
+
+    <h2 class="bar">Education</h2>
+    <article class="entry">
+      <div class="when">09/2024 – 03/2027<br/>(expected)<br/>Tehran, Iran</div>
+      <div>
+        <h3>M.Sc. Electrical Engineering — Digital Electronics</h3>
+        <p class="org">Amirkabir University of Technology</p>
+        <p>Degree not yet awarded. Programme title is Digital Electronic Systems; AI coursework: Big Data Processing; Data Analysis; Machine Learning; Numerical Optimization; Neural Networks; Computer Vision. Thesis: hierarchical network traffic classification on MERLOT packet text (DistilGPT-2 router, LoRA experts, held-out evaluation).</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">09/2019 – 09/2023<br/>Kermanshah, Iran</div>
+      <div>
+        <h3>B.Sc. Electrical Engineering — Electronics</h3>
+        <p class="org">Razi University</p>
+        <p>Electronics, schematic/PCB design, and microcontroller programming. B.Sc. project: soil-moisture irrigation prototype.</p>
+      </div>
+    </article>
+
+    <h2 class="bar">Experience</h2>
+    <article class="entry">
+      <div class="when">11/2025 – Present<br/>Tehran, Iran</div>
+      <div>
+        <h3>AI Developer</h3>
+        <p class="org">Daria-hamrah paytakht</p>
+        <ul class="bullets">
+          <li>Document knowledge-management pipeline: ingest PDFs and Word files and produce summaries, keywords, categories, and question–answer pairs.</li>
+          <li>Text-to-speech workflow: data preparation, experimental evaluation of synthesised speech, and Python tooling for a production-oriented pipeline. Further details are confidential.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">08/2022 – 10/2024<br/>Kermanshah, Iran</div>
+      <div>
+        <h3>Electronics Technician</h3>
+        <p class="org">PoyeshGaran Sanat Paya (pspaya)</p>
+        <ul class="bullets">
+          <li>Progressed from intern to project responsibility: Altium schematic/PCB design, Arduino firmware, prototyping, hardware testing, and documentation.</li>
+          <li>Full-time in summers; part-time during semesters.</li>
+        </ul>
+      </div>
+    </article>
+
+    <h2 class="bar">Selected projects</h2>
+    <article class="entry">
+      <div class="when">06/2025 – Present</div>
+      <div>
+        <h3>Hierarchical network traffic classification — M.Sc. thesis</h3>
+        <p>Encrypted and malicious traffic on MERLOT. Nine-class DistilGPT-2 router (application, APT, botnet, DoH, malware, Tor, VPN, web attack, website), then a specialist expert for the exact local label. LoRA adapters on a shared backbone, compared with a flat global-label baseline on a fixed split (45,000 train / 4,500 test). Coarse-type routing 97.6% accuracy; exact-label identification remains the open thesis problem (~55% end-to-end).</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">11/2025 – Present</div>
+      <div>
+        <h3>Document knowledge management</h3>
+        <p>Industry system turning unstructured documents into reviewable structured knowledge. Related components: multi-format extraction and topic grouping of related passages.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">11/2025 – Present</div>
+      <div>
+        <h3>Text-to-speech</h3>
+        <p>Industry TTS work: dataset preparation, experimental evaluation of synthesised speech, and Python pipeline tooling.</p>
+      </div>
+    </article>
+    <p class="page-num">1 / 2</p>
+  </section>
+
+  <section class="page">
+    <h2 class="bar">Selected projects (continued)</h2>
+    <article class="entry">
+      <div class="when">2026</div>
+      <div>
+        <h3>Ingredient-first recipe ranking</h3>
+        <p>Deployed recommender that ranks recipes by pantry coverage, utilisation, and rating. Live: kimiya1991.github.io/food-recom · github.com/kimiya1991/food-recom</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">2026</div>
+      <div>
+        <h3>Embedding model evaluation</h3>
+        <p>Comparative evaluation of embedding models for RAG using cosine similarity, Recall@k, MRR, and nDCG.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">2026</div>
+      <div>
+        <h3>Marketplace and catalog extraction</h3>
+        <p>Web scraping and aggregation: smartphone price comparison across marketplaces, and e-commerce category/catalog extraction.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">08/2022 – 03/2023</div>
+      <div>
+        <h3>Automatic irrigation system</h3>
+        <p>B.Sc. Arduino prototype: soil moisture and temperature sensing, threshold-based pump control, and practical testing.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">06/2024 – 08/2024</div>
+      <div>
+        <h3>Arduino Nano paper cutter</h3>
+        <p>Prototype controlling a modified printer mechanism as a paper-cutting device: control logic, electronics integration, and consistency tests.</p>
+      </div>
+    </article>
+
+    <h2 class="bar">Skills</h2>
+    <p><strong>Machine learning.</strong> Hierarchical traffic classification, DistilGPT-2, LoRA / PEFT, neural networks, computer vision, NLP / LLMs, embeddings, RAG evaluation, numerical optimization, data analysis, big-data processing, model evaluation, PyTorch.</p>
+    <p style="margin-top:3px"><strong>Software.</strong> Python, C/C++, Git, REST APIs, HTML/CSS, web scraping, MATLAB, Microsoft Office.</p>
+    <p style="margin-top:3px"><strong>Electronics.</strong> Altium Designer, Arduino, PCB/schematic design, soldering, Proteus, CodeVision, Multisim, Atmel Studio, VHDL, ADS.</p>
+
+    <h2 class="bar">Languages &amp; certificates</h2>
+    <p>English: studied 2012–2019; Cambridge English First (FCE), CEFR B2 (2019). Persian: native.</p>
+    <p style="margin-top:3px">AI Developer Certificate (industry bootcamp). Arduino programming certificate.</p>
+    <p class="page-num">2 / 2</p>
+  </section>
+</body>
+</html>
