@@ -12,7 +12,7 @@ export default function Home() {
           </p>
           <h1>{site.name}</h1>
           <p className="lede">
-            Graduate study in <em>artificial intelligence</em> (M.Sc. expected March 2027). Master's research: hierarchical classification of encrypted and malicious network traffic.
+            Graduate study in <em>artificial intelligence</em> (M.Sc. expected March 2027), with an undergraduate degree in electronics.
           </p>
           <p className="intro">{site.summary}</p>
           <div className="heroActions">
@@ -32,7 +32,7 @@ export default function Home() {
         </div>
         <figure className="portrait">
           <img
-            src={`${withBase("/kimiya.jpg")}?v=2`}
+            src={withBase("/kj-portrait.jpg")}
             alt="Portrait of Kimiya Jafarpor"
             width={720}
             height={900}
@@ -60,7 +60,6 @@ export default function Home() {
               <li key={course.title}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{course.title}</strong>
-                <small>{course.fa}</small>
               </li>
             ))}
           </ol>
@@ -76,8 +75,8 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            The principal academic project is the M.Sc. thesis on hierarchical network traffic classification.
-            Additional work covers knowledge management, speech, recommendation systems, and embedded electronics.
+            Projects in knowledge management, speech processing, recommendation systems, network analysis, and
+            embedded electronics.
           </p>
         </div>
 
@@ -169,9 +168,8 @@ export default function Home() {
               computer vision, numerical optimization, data analysis, and big-data processing.
             </p>
             <p>
-              My master's research is hierarchical classification of encrypted and malicious network traffic
-              from packet text, using a DistilGPT-2 router–expert architecture on the MERLOT corpus. Applied
-              work includes knowledge management, text-to-speech, and recommendation systems.
+              Applied work includes knowledge management, text-to-speech, and recommendation systems. Master's
+              research is ongoing work on network traffic classification.
             </p>
             <dl className="facts">
               <div>

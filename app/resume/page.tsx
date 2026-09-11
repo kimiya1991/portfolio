@@ -53,9 +53,7 @@ export default function ResumePage() {
         <h2>Graduate coursework in artificial intelligence</h2>
         <ul className="resumeList">
           {graduateCourses.map((course) => (
-            <li key={course.title}>
-              {course.title} ({course.fa})
-            </li>
+            <li key={course.title}>{course.title}</li>
           ))}
         </ul>
       </section>
@@ -79,9 +77,9 @@ export default function ResumePage() {
       <section className="shell resumeBlock">
         <h2>Selected research and projects</h2>
         <ul className="resumeList">
-          <li>Hierarchical network traffic classification — M.Sc. thesis: DistilGPT-2 router–expert pipeline on MERLOT packet text; coarse-type routing versus fine-grained identification of encrypted and malicious traffic.</li>
           <li>Document knowledge management — conversion of unstructured documents into structured summaries, keywords, and question–answer pairs.</li>
           <li>Ingredient-first recipe ranking — a deployed recommendation system based on pantry coverage and utilization.</li>
+          <li>Network traffic classification — ongoing M.Sc. thesis on hierarchical classification of encrypted and malicious traffic.</li>
           <li>Applied text-to-speech — experimental evaluation and tooling for a production synthesis pipeline.</li>
           <li>Smart irrigation — B.Sc. embedded prototype with soil-moisture control.</li>
           <li>Document extraction, topic grouping, and embedding evaluation for retrieval-augmented generation.</li>
