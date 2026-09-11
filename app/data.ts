@@ -1,6 +1,6 @@
 export const site = {
   name: "Kimiya Jafarpor",
-  role: "Machine Learning Researcher · M.Sc. Candidate",
+  role: "M.Sc. Candidate · Applied AI & Electronics",
   location: "Tehran",
   email: "kimiya.tommy@gmail.com",
   phone: "+98 921 977 5012",
@@ -10,13 +10,14 @@ export const site = {
   url: "https://kimiya1991.github.io/portfolio",
   affiliation: "Amirkabir University of Technology",
   summary:
-    "M.Sc. candidate in Digital Electronic Systems at Amirkabir University of Technology (degree in progress; expected March 2027). Graduate coursework is in artificial intelligence: big-data processing, data analysis, machine learning, numerical optimization, neural networks, and computer vision. Applied work covers document knowledge management, text-to-speech, and recommendation systems. Master's research is hierarchical network traffic classification, still in progress. Undergraduate training is a B.Sc. in Electrical Engineering (Electronics), with experience in schematic/PCB design and Arduino prototyping.",
+    "M.Sc. candidate in Digital Electronic Systems at Amirkabir University of Technology (degree in progress; expected March 2027). Work spans applied AI — document knowledge management, text-to-speech, and a deployed recipe recommender — and electronics: schematic/PCB design, Arduino prototyping, and a B.Sc. irrigation system. Graduate coursework is in artificial intelligence. Master's thesis on hierarchical network traffic classification is still in progress. Undergraduate degree: B.Sc. Electrical Engineering (Electronics), Razi University, 2019–2023.",
 };
 
 export type CaseStudy = {
   number: string;
   title: string;
   type: string;
+  dates?: string;
   problem?: string;
   approach?: string;
   outcome?: string;
@@ -32,7 +33,8 @@ export const caseStudies: CaseStudy[] = [
   {
     number: "01",
     title: "Document Knowledge Management",
-    type: "Applied research · Knowledge management",
+    type: "Applied project · Knowledge management",
+    dates: "11/2025 — Present",
     featured: true,
     badge: "Primary applied project",
     problem:
@@ -47,6 +49,7 @@ export const caseStudies: CaseStudy[] = [
     number: "02",
     title: "Cook With What You Have",
     type: "Applied project · Recommendation systems",
+    dates: "2026",
     featured: true,
     badge: "Deployed system",
     problem:
@@ -61,20 +64,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     number: "03",
-    title: "Network Traffic Classification",
-    type: "M.Sc. thesis · Machine learning",
-    problem:
-      "Fine-grained labels for mixed encrypted and malicious network traffic are difficult to recover from packet text.",
-    approach:
-      "Ongoing master's research: a hierarchical DistilGPT-2 pipeline on the MERLOT corpus, with a coarse-type router, specialist LoRA experts, and a comparison against a flat classifier on a fixed held-out split.",
-    outcome:
-      "The thesis is still in progress. Coarse-type routing is strong; exact-label identification remains the open research problem.",
-    tags: ["Python", "Machine learning", "Network security", "LoRA"],
-  },
-  {
-    number: "04",
     title: "Applied Text-to-Speech",
-    type: "Applied research · Speech processing",
+    type: "Applied project · Speech processing",
+    dates: "11/2025 — Present",
     problem:
       "Deployed speech systems require synthesis that is both natural and stable under production constraints.",
     approach:
@@ -84,9 +76,10 @@ export const caseStudies: CaseStudy[] = [
     tags: ["TTS", "Speech processing", "Python", "Evaluation"],
   },
   {
-    number: "05",
+    number: "04",
     title: "Smart Irrigation System",
     type: "B.Sc. project · Embedded systems",
+    dates: "08/2022 — 03/2023",
     problem:
       "Irrigation schedules that ignore soil conditions waste water and still fail when moisture is already sufficient.",
     approach:
@@ -96,9 +89,23 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Arduino", "Sensors", "C/C++", "Prototyping"],
   },
   {
+    number: "05",
+    title: "Arduino Nano Paper Cutter",
+    type: "Embedded prototype · Electronics",
+    dates: "06/2024 — 08/2024",
+    problem:
+      "A modified printer mechanism needed reliable control as a paper-cutting device.",
+    approach:
+      "An Arduino Nano prototype with control logic, electronics integration, and consistency tests.",
+    outcome:
+      "A working hardware prototype from mechanism, firmware, and testing.",
+    tags: ["Arduino", "Prototyping", "C/C++"],
+  },
+  {
     number: "06",
     title: "Multi-format Document Extractor",
     type: "Knowledge management · Ingestion pipelines",
+    dates: "11/2025 — Present",
     problem:
       "Knowledge systems fail when source files arrive as mixed PDFs, Word documents, and spreadsheets.",
     approach:
@@ -111,6 +118,7 @@ export const caseStudies: CaseStudy[] = [
     number: "07",
     title: "Document Topic Grouping",
     type: "Document AI · Topic grouping",
+    dates: "11/2025 — Present",
     problem:
       "Related passages from different files are hard to review when they are not grouped.",
     approach:
@@ -123,6 +131,7 @@ export const caseStudies: CaseStudy[] = [
     number: "08",
     title: "Embedding Model Evaluation",
     type: "Embeddings · RAG evaluation",
+    dates: "2026",
     problem:
       "Embedding models for retrieval can look strong on one metric and weak on another.",
     approach:
@@ -135,6 +144,7 @@ export const caseStudies: CaseStudy[] = [
     number: "09",
     title: "Smartphone Price Comparison",
     type: "Web scraping · Price comparison",
+    dates: "2026",
     problem:
       "The same device is listed at different prices across online marketplaces.",
     approach:
@@ -147,6 +157,7 @@ export const caseStudies: CaseStudy[] = [
     number: "10",
     title: "E-commerce Catalog Extraction",
     type: "Web scraping · Catalog extraction",
+    dates: "2026",
     problem:
       "Product catalogues on e-commerce sites are not available as a clean structured list.",
     approach:
@@ -157,15 +168,16 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     number: "11",
-    title: "Arduino Nano Paper Cutter",
-    type: "Embedded prototype · Electronics",
+    title: "Network Traffic Classification",
+    type: "M.Sc. thesis · Machine learning",
+    dates: "06/2025 — Present",
     problem:
-      "A modified printer mechanism needed reliable control as a paper-cutting device.",
+      "Fine-grained labels for mixed encrypted and malicious network traffic are difficult to recover from packet text.",
     approach:
-      "An Arduino Nano prototype with control logic, electronics integration, and consistency tests.",
+      "Ongoing master's thesis: a hierarchical DistilGPT-2 pipeline on the MERLOT corpus, with a coarse-type router, specialist LoRA experts, and a comparison against a flat classifier on a fixed held-out split.",
     outcome:
-      "A working hardware prototype from mechanism, firmware, and testing.",
-    tags: ["Arduino", "Prototyping", "C/C++"],
+      "The thesis is still in progress. Coarse-type routing is strong; exact-label identification remains the open problem.",
+    tags: ["Python", "Machine learning", "Network security", "LoRA"],
   },
 ];
 
@@ -247,26 +259,25 @@ export const graduateCourses = [
 
 export const skills = [
   {
-    title: "Research areas",
+    title: "Machine learning",
     items: [
       "Machine learning",
       "Neural networks",
       "Computer vision",
-      "Numerical optimization",
-      "Big data processing",
-      "Data analysis",
       "NLP",
       "Knowledge management",
       "Speech & TTS",
-      "Network traffic classification",
       "Embeddings",
       "RAG",
+      "Numerical optimization",
+      "Data analysis",
+      "Big data processing",
       "Model evaluation",
-      "Data preparation",
+      "Network traffic classification",
     ],
   },
   {
-    title: "Programming",
+    title: "Software",
     items: [
       "Python",
       "C",

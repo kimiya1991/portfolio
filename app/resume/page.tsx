@@ -103,7 +103,10 @@ export default function ResumePage() {
           <article key={project.number}>
             <header>
               <h3>{project.title}</h3>
-              <small>{project.type}</small>
+              <small>
+                {project.type}
+                {project.dates ? ` · ${project.dates}` : ""}
+              </small>
             </header>
             {project.problem && project.approach && project.outcome ? (
               <p>

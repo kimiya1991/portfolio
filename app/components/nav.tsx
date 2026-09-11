@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/#work", label: "Research" },
-  { href: "/#coursework", label: "Coursework" },
-  { href: "/#about", label: "About" },
+  { href: "/#work", label: "Projects" },
   { href: "/#experience", label: "Experience" },
+  { href: "/#coursework", label: "Education" },
+  { href: "/#about", label: "About" },
   { href: "/resume/", label: "CV" },
 ];
 

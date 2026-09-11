@@ -64,7 +64,7 @@ const jsonLd = {
     addressLocality: site.location,
     addressCountry: "IR",
   },
-  sameAs: [site.github, site.instagram],
+  sameAs: [site.github, site.linkedin, site.instagram],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

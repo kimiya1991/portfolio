@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { withBase } from "./base-path";
-import { caseStudies, education, experience, graduateCourses, otherWork, site, skills } from "./data";
+import { caseStudies, education, experience, graduateCourses, languages, otherWork, site, skills } from "./data";
 
 export default function Home() {
   return (
@@ -12,12 +12,12 @@ export default function Home() {
           </p>
           <h1>{site.name}</h1>
           <p className="lede">
-            Graduate study in <em>artificial intelligence</em> (M.Sc. expected March 2027), with an undergraduate degree in electronics.
+            Applied AI, electronics, and graduate study. M.Sc. expected March 2027.
           </p>
           <p className="intro">{site.summary}</p>
           <div className="heroActions">
             <a className="primary" href="#work">
-              Research and projects
+              Projects
             </a>
             <Link className="textLink" href="/resume/">
               Curriculum vitae
@@ -27,6 +27,9 @@ export default function Home() {
             </a>
             <a className="textLink" href={site.github} target="_blank" rel="noreferrer">
               GitHub
+            </a>
+            <a className="textLink" href={site.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
             </a>
           </div>
         </div>
@@ -41,42 +44,17 @@ export default function Home() {
         </figure>
       </section>
 
-      <section className="coursework section" id="coursework">
-        <div className="shell">
-          <div className="sectionHead">
-            <div>
-              <p className="eyebrow">Graduate coursework</p>
-              <h2>
-                The M.Sc. courses are in <em>artificial intelligence</em>.
-              </h2>
-            </div>
-            <p>
-              The degree title is Digital Electronic Systems. The courses completed in the programme are the
-              following.
-            </p>
-          </div>
-          <ol className="courseGrid">
-            {graduateCourses.map((course, index) => (
-              <li key={course.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{course.title}</strong>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       <section className="section shell" id="work">
         <div className="sectionHead">
           <div>
-            <p className="eyebrow">Research &amp; projects</p>
+            <p className="eyebrow">Portfolio</p>
             <h2>
-              Selected research and <em>applied work</em>.
+              Applied AI, electronics, and a <em>live product</em>.
             </h2>
           </div>
           <p>
-            Projects in knowledge management, speech processing, recommendation systems, network analysis, and
-            embedded electronics.
+            Knowledge management, speech, recommendation systems, embedded hardware, and web data work.
+            The M.Sc. thesis is included at the end and is still in progress.
           </p>
         </div>
 
@@ -89,6 +67,7 @@ export default function Home() {
                 {project.featured ? <b>{project.badge ?? "Live product"}</b> : null}
               </header>
               <h3>{project.title}</h3>
+              {project.dates ? <p className="company">{project.dates}</p> : null}
               {project.problem && project.approach && project.outcome ? (
                 <dl className="caseBody">
                   <div>
@@ -116,7 +95,7 @@ export default function Home() {
                 <div className="caseActions">
                   {project.liveUrl ? (
                     <a href={project.liveUrl} target="_blank" rel="noreferrer">
-                      Demonstration
+                      Live site
                     </a>
                   ) : null}
                   {project.repoUrl ? (
@@ -131,7 +110,7 @@ export default function Home() {
         </div>
 
         <div className="otherWork">
-          <h3>Related course projects</h3>
+          <h3>Course projects</h3>
           <ul>
             {otherWork.map((item) => (
               <li key={item.title}>
@@ -146,55 +125,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about section" id="about">
-        <div className="shell aboutGrid">
-          <div>
-            <p className="eyebrow">Background</p>
-            <h2>
-              Trained in <em>artificial intelligence</em>.
-              <br />
-              Background in electronics.
-            </h2>
-          </div>
-          <div className="aboutCopy">
-            <p className="lead">
-              My undergraduate degree is in electrical engineering. My graduate coursework is in artificial
-              intelligence.
-            </p>
-            <p>
-              I completed a B.Sc. in Electrical Engineering (Electronics) at Razi University. I am an M.Sc.
-              candidate in Digital Electronic Systems at Amirkabir University of Technology; the degree is in
-              progress and expected in March 2027. Courses taken include machine learning, neural networks,
-              computer vision, numerical optimization, data analysis, and big-data processing.
-            </p>
-            <p>
-              Applied work includes knowledge management, text-to-speech, and recommendation systems. Master's
-              research is ongoing work on network traffic classification.
-            </p>
-            <dl className="facts">
-              <div>
-                <dt>6</dt>
-                <dd>Core graduate AI courses</dd>
-              </div>
-              <div>
-                <dt>M.Sc.</dt>
-                <dd>Expected March 2027</dd>
-              </div>
-              <div>
-                <dt>B.Sc.</dt>
-                <dd>Electrical engineering, electronics</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </section>
-
       <section className="section shell" id="experience">
         <div className="sectionHead compact">
           <div>
-            <p className="eyebrow">Appointments</p>
+            <p className="eyebrow">Experience</p>
             <h2>
-              Professional and <em>academic</em> experience.
+              Industry work in <em>AI and electronics</em>.
             </h2>
           </div>
         </div>
@@ -219,17 +155,87 @@ export default function Home() {
             </li>
           ))}
         </ol>
-        <div className="education">
-          <p className="eyebrow">Education</p>
-          {education.map((item) => (
-            <div key={item.title}>
-              <strong>{item.title}</strong>
-              <span>
-                {item.school} · {item.dates}
-                {item.note ? ` · ${item.note}` : ""}
-              </span>
+      </section>
+
+      <section className="coursework section" id="coursework">
+        <div className="shell">
+          <div className="sectionHead">
+            <div>
+              <p className="eyebrow">Education</p>
+              <h2>
+                Digital electronics, with graduate courses in <em>artificial intelligence</em>.
+              </h2>
             </div>
-          ))}
+            <p>
+              The M.Sc. degree has not been awarded. Expected completion is March 2027.
+            </p>
+          </div>
+          <div className="education">
+            {education.map((item) => (
+              <div key={item.title}>
+                <strong>{item.title}</strong>
+                <span>
+                  {item.school} · {item.location} · {item.dates}
+                  {item.note ? ` · ${item.note}` : ""}
+                </span>
+              </div>
+            ))}
+          </div>
+          <ol className="courseGrid">
+            {graduateCourses.map((course, index) => (
+              <li key={course.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{course.title}</strong>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="about section" id="about">
+        <div className="shell aboutGrid">
+          <div>
+            <p className="eyebrow">Background</p>
+            <h2>
+              Electronics by training.
+              <br />
+              Applied AI in current work.
+            </h2>
+          </div>
+          <div className="aboutCopy">
+            <p className="lead">
+              I build document, speech, and recommendation systems, and I have a hardware background in
+              schematic design, PCB work, and Arduino prototypes.
+            </p>
+            <p>
+              I completed a B.Sc. in Electrical Engineering (Electronics) at Razi University (2019–2023). I am
+              an M.Sc. candidate in Digital Electronic Systems at Amirkabir University of Technology; the
+              degree is in progress and expected in March 2027. Courses taken include machine learning, neural
+              networks, computer vision, numerical optimization, data analysis, and big-data processing.
+            </p>
+            <p>
+              Current industry work is in knowledge management and text-to-speech. Earlier work was as an
+              electronics technician at PoyeshGaran Sanat Paya. The master's thesis on network traffic
+              classification is ongoing and has not been completed.
+            </p>
+            <p>
+              Languages: {languages.join("; ")}.
+            </p>
+            <dl className="facts">
+              <div>
+                <dt>B.Sc.</dt>
+                <dd>Electrical engineering, electronics</dd>
+              </div>
+              <div>
+                <dt>M.Sc.</dt>
+                <dd>Expected March 2027</dd>
+              </div>
+              <div>
+                <dt>11</dt>
+                <dd>Projects on this site</dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </section>
 
@@ -258,9 +264,7 @@ export default function Home() {
         <div className="shell footerGrid">
           <div>
             <p className="eyebrow">Contact</p>
-            <h2>
-              Correspondence regarding research or applied machine learning is welcome.
-            </h2>
+            <h2>Email, GitHub, and LinkedIn are the best ways to reach me.</h2>
             <a className="email" href={`mailto:${site.email}`}>
               {site.email}
             </a>
@@ -270,13 +274,16 @@ export default function Home() {
             <a href={site.github} target="_blank" rel="noreferrer">
               GitHub
             </a>
+            <a href={site.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
             <a href={site.instagram} target="_blank" rel="noreferrer">
               Instagram
             </a>
           </div>
         </div>
         <div className="shell copyright">
-          <span>© {new Date().getFullYear()} {site.name}</span>
+          <span>© 2026 {site.name}</span>
           <span>{site.location}</span>
         </div>
       </footer>
