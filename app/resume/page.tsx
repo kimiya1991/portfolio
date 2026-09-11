@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withBase } from "../base-path";
 import { PrintButton } from "../components/print-button";
 import { education, experience, graduateCourses, otherWork, site, skills } from "../data";
 
@@ -26,6 +27,9 @@ export default function ResumePage() {
           <a href={`mailto:${site.email}`}>{site.email}</a>
           <a href={site.github} target="_blank" rel="noreferrer">
             GitHub
+          </a>
+          <a href={withBase("/Kimiya-Jafarpor-CV.pdf")} target="_blank" rel="noreferrer">
+            Download PDF
           </a>
           <PrintButton />
         </div>

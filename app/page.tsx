@@ -22,6 +22,9 @@ export default function Home() {
             <Link className="textLink" href="/resume/">
               Curriculum vitae
             </Link>
+            <a className="textLink" href={`${withBase("/Kimiya-Jafarpor-CV.pdf")}`} target="_blank" rel="noreferrer">
+              Download CV
+            </a>
             <a className="textLink" href={site.github} target="_blank" rel="noreferrer">
               GitHub
             </a>
@@ -29,7 +32,7 @@ export default function Home() {
         </div>
         <figure className="portrait">
           <img
-            src={withBase("/kimiya-portrait.jpg")}
+            src={`${withBase("/kimiya.jpg")}?v=2`}
             alt="Portrait of Kimiya Jafarpor"
             width={720}
             height={900}

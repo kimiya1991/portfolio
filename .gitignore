@@ -40,3 +40,8 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+cv-preview
+
+*.jpg
+!public/*.jpg
