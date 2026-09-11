@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import { withBase } from "../base-path";
 import { PrintButton } from "../components/print-button";
-import { education, experience, graduateCourses, otherWork, site, skills } from "../data";
+import {
+  caseStudies,
+  certificates,
+  education,
+  experience,
+  graduateCourses,
+  languages,
+  otherWork,
+  site,
+  skills,
+} from "../data";
 
 export const metadata: Metadata = {
   title: "Curriculum Vitae",
@@ -15,9 +25,7 @@ export default function ResumePage() {
         <div>
           <p className="eyebrow">Curriculum vitae</p>
           <h1>{site.name}</h1>
-          <p className="lede">
-            {site.role}
-          </p>
+          <p className="lede">{site.role}</p>
           <p className="intro">
             {site.affiliation} · {site.location}
           </p>
@@ -25,8 +33,12 @@ export default function ResumePage() {
         </div>
         <div className="resumeActions">
           <a href={`mailto:${site.email}`}>{site.email}</a>
+          <span>{site.phone}</span>
           <a href={site.github} target="_blank" rel="noreferrer">
             GitHub
+          </a>
+          <a href={site.linkedin} target="_blank" rel="noreferrer">
+            LinkedIn
           </a>
           <a href={withBase("/Kimiya-Jafarpor-CV.pdf")} target="_blank" rel="noreferrer">
             Download PDF
@@ -43,8 +55,11 @@ export default function ResumePage() {
               <h3>{item.title}</h3>
               <time>{item.dates}</time>
             </header>
-            <p>{item.school}</p>
-            {item.note ? <p>{item.note}.</p> : null}
+            <p>
+              {item.school}
+              {item.location ? ` · ${item.location}` : ""}
+            </p>
+            {item.note ? <p>{item.note}</p> : null}
           </article>
         ))}
       </section>
@@ -59,7 +74,7 @@ export default function ResumePage() {
       </section>
 
       <section className="shell resumeBlock">
-        <h2>Appointments</h2>
+        <h2>Experience</h2>
         {experience.map((item) => (
           <article key={item.title}>
             <header>
@@ -69,29 +84,76 @@ export default function ResumePage() {
             <p className="company">
               {item.company ? `${item.company} · ${item.location}` : item.location}
             </p>
-            <p>{item.description}</p>
+            {item.bullets ? (
+              <ul className="resumeList">
+                {item.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>{item.description}</p>
+            )}
           </article>
         ))}
       </section>
 
       <section className="shell resumeBlock">
-        <h2>Selected research and projects</h2>
-        <ul className="resumeList">
-          <li>Document knowledge management — conversion of unstructured documents into structured summaries, keywords, and question–answer pairs.</li>
-          <li>Ingredient-first recipe ranking — a deployed recommendation system based on pantry coverage and utilization.</li>
-          <li>Network traffic classification — ongoing M.Sc. thesis on hierarchical classification of encrypted and malicious traffic.</li>
-          <li>Applied text-to-speech — experimental evaluation and tooling for a production synthesis pipeline.</li>
-          <li>Smart irrigation — B.Sc. embedded prototype with soil-moisture control.</li>
-          <li>Document extraction, topic grouping, and embedding evaluation for retrieval-augmented generation.</li>
-          <li>Smartphone price comparison and e-commerce catalog extraction.</li>
-        </ul>
+        <h2>Projects</h2>
+        {caseStudies.map((project) => (
+          <article key={project.number}>
+            <header>
+              <h3>{project.title}</h3>
+              <small>{project.type}</small>
+            </header>
+            {project.problem && project.approach && project.outcome ? (
+              <p>
+                {project.problem} {project.approach} {project.outcome}
+              </p>
+            ) : (
+              <p>{project.blurb}</p>
+            )}
+            {project.liveUrl || project.repoUrl ? (
+              <p>
+                {project.liveUrl ? (
+                  <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                    Live
+                  </a>
+                ) : null}
+                {project.liveUrl && project.repoUrl ? " · " : null}
+                {project.repoUrl ? (
+                  <a href={project.repoUrl} target="_blank" rel="noreferrer">
+                    Repository
+                  </a>
+                ) : null}
+              </p>
+            ) : null}
+          </article>
+        ))}
         <p className="resumeNote">
-          Coursework: {otherWork.map((item) => item.title).join("; ")}.
+          Course projects: {otherWork.map((item) => item.title).join("; ")}.
         </p>
       </section>
 
       <section className="shell resumeBlock">
-        <h2>Methods and tools</h2>
+        <h2>Languages</h2>
+        <ul className="resumeList">
+          {languages.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="shell resumeBlock">
+        <h2>Certificates</h2>
+        <ul className="resumeList">
+          {certificates.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="shell resumeBlock">
+        <h2>Skills</h2>
         {skills.map((group) => (
           <p key={group.title}>
             <strong>{group.title}.</strong> {group.items.join(", ")}.

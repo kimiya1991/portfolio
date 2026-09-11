@@ -208,6 +208,13 @@ export default function Home() {
                   {item.company ? `${item.company} · ${item.location}` : item.location}
                 </p>
                 <p>{item.description}</p>
+                {item.bullets ? (
+                  <ul className="resumeList">
+                    {item.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </li>
           ))}

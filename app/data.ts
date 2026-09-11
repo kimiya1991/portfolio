@@ -3,12 +3,14 @@ export const site = {
   role: "Machine Learning Researcher · M.Sc. Candidate",
   location: "Tehran",
   email: "kimiya.tommy@gmail.com",
+  phone: "+98 921 977 5012",
   github: "https://github.com/kimiya1991",
+  linkedin: "https://linkedin.com/in/kimia-jafarpor",
   instagram: "https://instagram.com/mia_electronic",
   url: "https://kimiya1991.github.io/portfolio",
   affiliation: "Amirkabir University of Technology",
   summary:
-    "M.Sc. candidate at Amirkabir University of Technology; the degree has not yet been awarded and is expected in March 2027. The official programme is Digital Electronic Systems. Graduate coursework is in artificial intelligence: big-data processing, data analysis, machine learning, numerical optimization, neural networks, and computer vision. Master's research is hierarchical network traffic classification. Applied work includes knowledge management, text-to-speech, and recommendation systems. Undergraduate training is in electrical engineering (electronics).",
+    "M.Sc. candidate in Digital Electronic Systems at Amirkabir University of Technology (degree in progress; expected March 2027). Graduate coursework is in artificial intelligence: big-data processing, data analysis, machine learning, numerical optimization, neural networks, and computer vision. Applied work covers document knowledge management, text-to-speech, and recommendation systems. Master's research is hierarchical network traffic classification, still in progress. Undergraduate training is a B.Sc. in Electrical Engineering (Electronics), with experience in schematic/PCB design and Arduino prototyping.",
 };
 
 export type CaseStudy = {
@@ -61,14 +63,12 @@ export const caseStudies: CaseStudy[] = [
     number: "03",
     title: "Network Traffic Classification",
     type: "M.Sc. thesis · Machine learning",
-    featured: true,
-    badge: "Master's thesis",
     problem:
       "Fine-grained labels for mixed encrypted and malicious network traffic are difficult to recover from packet text.",
     approach:
-      "An ongoing hierarchical DistilGPT-2 pipeline on the MERLOT corpus: a coarse-type router, specialist LoRA experts, and a comparison with a flat classifier on a fixed held-out split.",
+      "Ongoing master's research: a hierarchical DistilGPT-2 pipeline on the MERLOT corpus, with a coarse-type router, specialist LoRA experts, and a comparison against a flat classifier on a fixed held-out split.",
     outcome:
-      "A research workflow still in progress. Coarse-type routing is strong; exact-label identification remains the open problem of the thesis.",
+      "The thesis is still in progress. Coarse-type routing is strong; exact-label identification remains the open research problem.",
     tags: ["Python", "Machine learning", "Network security", "LoRA"],
   },
   {
@@ -99,36 +99,73 @@ export const caseStudies: CaseStudy[] = [
     number: "06",
     title: "Multi-format Document Extractor",
     type: "Knowledge management · Ingestion pipelines",
-    blurb: "Ingestion of PDF, Word, and spreadsheet documents into a knowledge-extraction pipeline.",
+    problem:
+      "Knowledge systems fail when source files arrive as mixed PDFs, Word documents, and spreadsheets.",
+    approach:
+      "Ingestion of heterogeneous office documents into a shared knowledge-extraction pipeline.",
+    outcome:
+      "A reusable extraction stage used by the document knowledge-management work.",
     tags: ["Document AI", "Python", "Pipelines"],
   },
   {
     number: "07",
     title: "Document Topic Grouping",
     type: "Document AI · Topic grouping",
-    blurb: "Grouping related passages from heterogeneous documents under shared topic labels.",
+    problem:
+      "Related passages from different files are hard to review when they are not grouped.",
+    approach:
+      "Grouping related passages from heterogeneous documents under shared topic labels.",
+    outcome:
+      "Topic-level organisation of extracted knowledge for review.",
     tags: ["LLMs", "Topic grouping", "NLP"],
   },
   {
     number: "08",
     title: "Embedding Model Evaluation",
     type: "Embeddings · RAG evaluation",
-    blurb: "Comparative evaluation of embedding models using retrieval metrics for RAG.",
+    problem:
+      "Embedding models for retrieval can look strong on one metric and weak on another.",
+    approach:
+      "Comparative evaluation of embedding models for RAG using cosine similarity, Recall@k, MRR, and nDCG.",
+    outcome:
+      "A fixed evaluation protocol that shows when retrieval quality and engineering metrics diverge.",
     tags: ["Embeddings", "RAG", "Evaluation"],
   },
   {
     number: "09",
     title: "Smartphone Price Comparison",
     type: "Web scraping · Price comparison",
-    blurb: "Collection and comparison of smartphone prices across multiple online marketplaces.",
+    problem:
+      "The same device is listed at different prices across online marketplaces.",
+    approach:
+      "Collection and aggregation of smartphone prices from multiple storefronts.",
+    outcome:
+      "A comparable price table across sources.",
     tags: ["Web scraping", "Python", "Data aggregation"],
   },
   {
     number: "10",
     title: "E-commerce Catalog Extraction",
     type: "Web scraping · Catalog extraction",
-    blurb: "Extraction of product categories and catalogs from e-commerce websites.",
+    problem:
+      "Product catalogues on e-commerce sites are not available as a clean structured list.",
+    approach:
+      "Extraction of product categories and catalogues from e-commerce websites.",
+    outcome:
+      "Structured category and product records for downstream use.",
     tags: ["Web scraping", "E-commerce", "Python"],
+  },
+  {
+    number: "11",
+    title: "Arduino Nano Paper Cutter",
+    type: "Embedded prototype · Electronics",
+    problem:
+      "A modified printer mechanism needed reliable control as a paper-cutting device.",
+    approach:
+      "An Arduino Nano prototype with control logic, electronics integration, and consistency tests.",
+    outcome:
+      "A working hardware prototype from mechanism, firmware, and testing.",
+    tags: ["Arduino", "Prototyping", "C/C++"],
   },
 ];
 
@@ -158,19 +195,27 @@ export const otherWork = [
 
 export const experience = [
   {
-    dates: "2025 — Present",
+    dates: "11/2025 — Present",
     title: "AI Developer",
     location: "Tehran",
     description:
-      "Applied research in knowledge management and text-to-speech, including document-to-knowledge pipelines, data preparation, experimental evaluation, and Python-based tooling.",
+      "Applied AI work on document knowledge management and text-to-speech.",
+    bullets: [
+      "Document knowledge-management pipeline: ingest PDFs and Word files and produce summaries, keywords, categories, and question–answer pairs.",
+      "Text-to-speech workflow: data preparation, experimental evaluation of synthesised speech, and Python tooling for a production-oriented pipeline.",
+    ],
   },
   {
-    dates: "2022 — 2024",
+    dates: "08/2022 — 10/2024",
     title: "Electronics Technician",
     company: "PoyeshGaran Sanat Paya",
     location: "Kermanshah",
     description:
-      "Progressed from internship to project responsibility, covering schematic and PCB design, Arduino programming, prototype assembly, hardware testing, and technical documentation.",
+      "Progressed from intern to project responsibility in hardware prototyping.",
+    bullets: [
+      "Altium schematic and PCB design, Arduino firmware, prototyping, hardware testing, and documentation.",
+      "Full-time in summers; part-time during semesters.",
+    ],
   },
 ];
 
@@ -178,13 +223,16 @@ export const education = [
   {
     title: "M.Sc. Electrical Engineering — Digital Electronics",
     school: "Amirkabir University of Technology",
-    dates: "2024 — March 2027 (expected)",
-    note: "Degree in progress; graduate coursework in artificial intelligence",
+    dates: "09/2024 — March 2027 (expected)",
+    location: "Tehran",
+    note: "Degree not yet awarded. Programme title is Digital Electronic Systems. AI coursework: Big Data Processing; Data Analysis; Machine Learning; Numerical Optimization; Neural Networks; Computer Vision. Thesis in progress: hierarchical network traffic classification.",
   },
   {
     title: "B.Sc. Electrical Engineering — Electronics",
     school: "Razi University",
-    dates: "2019 — 2023",
+    dates: "09/2019 — 09/2023",
+    location: "Kermanshah",
+    note: "Electronics, schematic/PCB design, and microcontroller programming. B.Sc. project: soil-moisture irrigation prototype.",
   },
 ];
 
@@ -219,18 +267,42 @@ export const skills = [
   },
   {
     title: "Programming",
-    items: ["Python", "C", "C++", "REST APIs", "Web scraping", "Arduino", "HTML & CSS", "Git"],
+    items: [
+      "Python",
+      "C",
+      "C++",
+      "Git",
+      "REST APIs",
+      "HTML & CSS",
+      "Web scraping",
+      "MATLAB",
+      "PyTorch",
+    ],
   },
   {
     title: "Electronics",
     items: [
       "Altium Designer",
+      "Arduino",
       "PCB & schematic design",
       "Soldering",
-      "Sensor integration",
-      "Hardware prototyping",
       "Proteus",
-      "MATLAB",
+      "CodeVision",
+      "Multisim",
+      "Atmel Studio",
+      "VHDL",
+      "ADS",
     ],
   },
+];
+
+export const languages = [
+  "English — Cambridge English First (FCE), CEFR B2 (2019); studied 2012–2019",
+  "Persian — native",
+];
+
+export const certificates = [
+  "AI Developer Certificate (industry bootcamp)",
+  "Cambridge English: First (FCE) — CEFR B2",
+  "Arduino programming",
 ];
