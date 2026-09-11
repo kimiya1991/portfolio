@@ -8,7 +8,7 @@ export const site = {
   url: "https://kimiya1991.github.io/portfolio",
   affiliation: "Amirkabir University of Technology",
   summary:
-    "M.Sc. candidate at Amirkabir University of Technology; the degree has not yet been awarded and is expected in March 2027. The official programme is Digital Electronic Systems. Graduate coursework is in artificial intelligence: big-data processing, data analysis, machine learning, numerical optimization, neural networks, and computer vision. Undergraduate training is in electrical engineering (electronics).",
+    "M.Sc. candidate at Amirkabir University of Technology; the degree has not yet been awarded and is expected in March 2027. The official programme is Digital Electronic Systems. Master's research is hierarchical classification of encrypted and malicious network traffic. Graduate coursework is in artificial intelligence: big-data processing, data analysis, machine learning, numerical optimization, neural networks, and computer vision. Undergraduate training is in electrical engineering (electronics).",
 };
 
 export type CaseStudy = {
@@ -29,6 +29,20 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     number: "01",
+    title: "Hierarchical Network Traffic Classification",
+    type: "M.Sc. thesis · Amirkabir University of Technology",
+    featured: true,
+    badge: "Master's thesis",
+    problem:
+      "Fine-grained labels for mixed network traffic are difficult to recover from packet text: payloads are often encrypted, classes span hundreds of services and threats, and a single flat classifier over all labels is a weak experimental baseline.",
+    approach:
+      "A hierarchical DistilGPT-2 pipeline on the MERLOT corpus. A nine-class router first predicts a coarse type (application, APT, botnet, DoH, malware, Tor, VPN, web attack, website); a specialist expert then predicts the exact local label. Experts are trained as LoRA adapters on a shared backbone and compared with a flat global-label baseline on a fixed held-out split (45,000 training rows / 4,500 test rows).",
+    outcome:
+      "Coarse-type routing reaches 97.6% accuracy. Exact-label identification remains the open problem of the thesis (end-to-end accuracy around 55%, with LoRA experts raising macro-F1 relative to the flat baseline). Ongoing work concentrates on the experts, including a communications-oriented subset: VPN, Tor, DoH, malware, and botnet traffic.",
+    tags: ["M.Sc. thesis", "MERLOT", "DistilGPT-2", "LoRA", "Network security", "Encrypted traffic"],
+  },
+  {
+    number: "02",
     title: "Cook With What You Have",
     type: "Applied project · Recommendation systems",
     featured: true,
@@ -44,11 +58,11 @@ export const caseStudies: CaseStudy[] = [
     repoUrl: "https://github.com/kimiya1991/food-recom",
   },
   {
-    number: "02",
+    number: "03",
     title: "Document Knowledge Management",
     type: "Applied research · Knowledge management",
     featured: true,
-    badge: "Primary project",
+    badge: "Primary applied project",
     problem:
       "Institutional documents—reports, guidelines, and technical files—are difficult to retrieve, summarize, or reuse as structured knowledge.",
     approach:
@@ -56,18 +70,6 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       "A knowledge-management system for converting unstructured documents into reviewable, structured representations.",
     tags: ["Knowledge management", "LLMs", "Document AI", "NLP"],
-  },
-  {
-    number: "03",
-    title: "Network Traffic Classification",
-    type: "Master's research · Machine learning",
-    problem:
-      "Network traffic is high-volume and difficult to label with static rules, especially when patterns shift across protocols and conditions.",
-    approach:
-      "Compared machine-learning and language-model methods for traffic classification, with an emphasis on data preparation, experimental design, and evaluation in Python.",
-    outcome:
-      "A research workflow for testing and comparing classifiers—part of ongoing master's work in digital electronic systems.",
-    tags: ["Python", "Machine learning", "Network security", "LLMs"],
   },
   {
     number: "04",
@@ -177,7 +179,7 @@ export const education = [
     title: "M.Sc. Electrical Engineering — Digital Electronics",
     school: "Amirkabir University of Technology",
     dates: "2024 — March 2027 (expected)",
-    note: "Degree in progress; graduate coursework in artificial intelligence",
+    note: "Degree in progress; master's research in hierarchical network traffic classification",
   },
   {
     title: "B.Sc. Electrical Engineering — Electronics",
@@ -199,8 +201,11 @@ export const skills = [
   {
     title: "Research areas",
     items: [
+      "Network traffic classification",
+      "Encrypted traffic analysis",
       "Machine learning",
       "Neural networks",
+      "LoRA / PEFT",
       "Computer vision",
       "Numerical optimization",
       "Big data processing",

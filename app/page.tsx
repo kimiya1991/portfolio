@@ -12,7 +12,7 @@ export default function Home() {
           </p>
           <h1>{site.name}</h1>
           <p className="lede">
-            Graduate study in <em>artificial intelligence</em> (M.Sc. expected March 2027), with an undergraduate degree in electronics.
+            Graduate study in <em>artificial intelligence</em> (M.Sc. expected March 2027). Master's research: hierarchical classification of encrypted and malicious network traffic.
           </p>
           <p className="intro">{site.summary}</p>
           <div className="heroActions">
@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <figure className="portrait">
           <img
-            src={withBase("/kimiya.jpg")}
+            src={withBase("/kimiya-portrait.jpg")}
             alt="Portrait of Kimiya Jafarpor"
             width={720}
             height={900}
@@ -73,8 +73,8 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Projects in knowledge management, speech processing, recommendation systems, network analysis, and
-            embedded electronics.
+            The principal academic project is the M.Sc. thesis on hierarchical network traffic classification.
+            Additional work covers knowledge management, speech, recommendation systems, and embedded electronics.
           </p>
         </div>
 
@@ -166,8 +166,9 @@ export default function Home() {
               computer vision, numerical optimization, data analysis, and big-data processing.
             </p>
             <p>
-              Applied work includes knowledge management, text-to-speech, recommendation systems, and network
-              traffic classification.
+              My master's research is hierarchical classification of encrypted and malicious network traffic
+              from packet text, using a DistilGPT-2 router–expert architecture on the MERLOT corpus. Applied
+              work includes knowledge management, text-to-speech, and recommendation systems.
             </p>
             <dl className="facts">
               <div>

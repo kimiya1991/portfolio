@@ -75,9 +75,9 @@ export default function ResumePage() {
       <section className="shell resumeBlock">
         <h2>Selected research and projects</h2>
         <ul className="resumeList">
+          <li>Hierarchical network traffic classification — M.Sc. thesis: DistilGPT-2 router–expert pipeline on MERLOT packet text; coarse-type routing versus fine-grained identification of encrypted and malicious traffic.</li>
           <li>Document knowledge management — conversion of unstructured documents into structured summaries, keywords, and question–answer pairs.</li>
           <li>Ingredient-first recipe ranking — a deployed recommendation system based on pantry coverage and utilization.</li>
-          <li>Network traffic classification — M.Sc. research comparing machine-learning and language-model methods.</li>
           <li>Applied text-to-speech — experimental evaluation and tooling for a production synthesis pipeline.</li>
           <li>Smart irrigation — B.Sc. embedded prototype with soil-moisture control.</li>
           <li>Document extraction, topic grouping, and embedding evaluation for retrieval-augmented generation.</li>

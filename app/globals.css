@@ -253,7 +253,7 @@ em { font-family: var(--font-serif), Georgia, serif; font-style: italic; font-we
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: center 37%;
+  object-position: center 30%;
   border: 1px solid var(--line);
 }
 
