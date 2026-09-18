@@ -32,6 +32,21 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     number: "01",
+    title: "Network Traffic Classification",
+    type: "M.Sc. thesis · Machine learning",
+    dates: "06/2025 — Present",
+    featured: true,
+    badge: "M.Sc. thesis",
+    problem:
+      "Investigating whether decomposing a flat classification problem into coarse routing and specialised local experts can improve exact-label classification of encrypted and malicious traffic on MERLOT packet text.",
+    approach:
+      "A hierarchical architecture using a DistilGPT-2 (~82M) router and nine LoRA experts sharing a frozen backbone, compared with a single flat classifier on one fixed stratified split (45,000 train / 4,500 test), with leakage checks and an oracle-expert condition to isolate router versus expert errors.",
+    outcome:
+      "The thesis is still in progress. Coarse routing reached 97.6% accuracy (macro-F1 0.975). Exact-label performance remains under investigation.",
+    tags: ["Python", "Machine learning", "Network security", "LoRA"],
+  },
+  {
+    number: "02",
     title: "Document Knowledge Management",
     type: "Applied project · Knowledge management",
     dates: "11/2025 — Present",
@@ -46,7 +61,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Knowledge management", "LLMs", "Document AI", "NLP"],
   },
   {
-    number: "02",
+    number: "03",
     title: "Cook With What You Have",
     type: "Applied project · Recommendation systems",
     dates: "2026",
@@ -63,7 +78,7 @@ export const caseStudies: CaseStudy[] = [
     repoUrl: "https://github.com/kimiya1991/food-recom",
   },
   {
-    number: "03",
+    number: "04",
     title: "Applied Text-to-Speech",
     type: "Applied project · Speech processing",
     dates: "11/2025 — Present",
@@ -76,7 +91,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["TTS", "Speech processing", "Python", "Evaluation"],
   },
   {
-    number: "04",
+    number: "05",
     title: "Smart Irrigation System",
     type: "B.Sc. project · Embedded systems",
     dates: "08/2022 — 03/2023",
@@ -89,7 +104,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Arduino", "Sensors", "C/C++", "Prototyping"],
   },
   {
-    number: "05",
+    number: "06",
     title: "Arduino Nano Paper Cutter",
     type: "Embedded prototype · Electronics",
     dates: "06/2024 — 08/2024",
@@ -102,7 +117,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Arduino", "Prototyping", "C/C++"],
   },
   {
-    number: "06",
+    number: "07",
     title: "Multi-format Document Extractor",
     type: "Knowledge management · Ingestion pipelines",
     dates: "11/2025 — Present",
@@ -115,7 +130,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Document AI", "Python", "Pipelines"],
   },
   {
-    number: "07",
+    number: "08",
     title: "Document Topic Grouping",
     type: "Document AI · Topic grouping",
     dates: "11/2025 — Present",
@@ -128,7 +143,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["LLMs", "Topic grouping", "NLP"],
   },
   {
-    number: "08",
+    number: "09",
     title: "Embedding Model Evaluation",
     type: "Embeddings · RAG evaluation",
     dates: "2026",
@@ -141,7 +156,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Embeddings", "RAG", "Evaluation"],
   },
   {
-    number: "09",
+    number: "10",
     title: "Smartphone Price Comparison",
     type: "Web scraping · Price comparison",
     dates: "2026",
@@ -154,7 +169,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Web scraping", "Python", "Data aggregation"],
   },
   {
-    number: "10",
+    number: "11",
     title: "E-commerce Catalog Extraction",
     type: "Web scraping · Catalog extraction",
     dates: "2026",
@@ -165,19 +180,6 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       "Structured category and product records for downstream use.",
     tags: ["Web scraping", "E-commerce", "Python"],
-  },
-  {
-    number: "11",
-    title: "Network Traffic Classification",
-    type: "M.Sc. thesis · Machine learning",
-    dates: "06/2025 — Present",
-    problem:
-      "Fine-grained labels for mixed encrypted and malicious network traffic are difficult to recover from packet text.",
-    approach:
-      "Ongoing master's thesis: a hierarchical DistilGPT-2 pipeline on the MERLOT corpus, with a coarse-type router, specialist LoRA experts, and a comparison against a flat classifier on a fixed held-out split.",
-    outcome:
-      "The thesis is still in progress. Coarse-type routing is strong; exact-label identification remains the open problem.",
-    tags: ["Python", "Machine learning", "Network security", "LoRA"],
   },
 ];
 
@@ -280,6 +282,12 @@ export const skills = [
     title: "Software",
     items: [
       "Python",
+      "PyTorch",
+      "NumPy",
+      "Pandas",
+      "scikit-learn",
+      "SciPy",
+      "Jupyter",
       "C",
       "C++",
       "Git",
@@ -287,7 +295,6 @@ export const skills = [
       "HTML & CSS",
       "Web scraping",
       "MATLAB",
-      "PyTorch",
     ],
   },
   {

@@ -43,5 +43,8 @@ next-env.d.ts
 
 cv-preview
 
+cv/*gresearch*
+cv/*GResearch*
+
 *.jpg
 !public/*.jpg

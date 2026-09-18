@@ -53,8 +53,8 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Knowledge management, speech, recommendation systems, embedded hardware, and web data work.
-            The M.Sc. thesis is included at the end and is still in progress.
+            The M.Sc. thesis on network traffic classification is first. Applied work follows: knowledge
+            management, speech, recommendation systems, embedded hardware, and web data.
           </p>
         </div>
 
